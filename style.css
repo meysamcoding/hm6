@@ -48,3 +48,14 @@ p{
     border-left : solid 1px black;
     border-right : solid 1px black;
 }
+div{
+    margin-top: 5px;
+    padding: 5px;
+}
+img{
+    float: center;
+    width: 50px;
+}
+h{
+    font-size: 40px;
+}

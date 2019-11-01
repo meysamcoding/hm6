@@ -2,17 +2,13 @@
 var btn = $("#add-movie");
 var search = $("#movie-input");
 var cityname = ["Los Angeles", "New York", "London", "Paris", "Boston", "Phoenix"];
-  
+
 
 var datetime = new Date();
 var newdate = datetime.toLocaleDateString();
 
- 
-
- 
-
- btn.on("click", function (event) {
-     event.preventDefault();
+btn.on("click", function (event) {
+    event.preventDefault();
 
     var cityName = search.val();
 
@@ -21,15 +17,32 @@ var newdate = datetime.toLocaleDateString();
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.clear();
-        console.log(response.name + newdate);
-        console.log("UV index:", response.wind.gust);
-        console.log("temp_max", response.main.temp_max);
-        console.log("speed", response.wind.speed);
-        console.log("humidity", response.main.humidity);
-       
+        // $("#display").empty();
+        // var weatherinfo = $("#display");
+        // var h = $("<h>").text(response.name + " ( " + newdate + " )");
+        // var p1 = $("<div>").text("temp_max" + response.main.temp_max);
+        // var p2 = $("<div>").text("speed: " + response.wind.speed);
+        // var p3 = $("<div>").text("humidity: ", +response.main.humidity  +"%");
+        // var p4 = $("<div>").text("UV index: ", +response.wind.gust);
+        // var weathericon = "http://openweathermap.org/img/w/"+ response.weather[0].icon +".png";
+
+
+
+        // weatherinfo.append(h , "<img src="+weathericon+">");
+        // weatherinfo.append(p1);
+        // weatherinfo.append(p2);
+        // weatherinfo.append(p3);
+        // weatherinfo.append(p4);
+
+
+        // console.clear();
+        // console.log(response.name + newdate);
+        // console.log("UV index:", response.wind.gust);
+        // console.log("temp_max", response.main.temp_max);
+        // console.log("speed", response.wind.speed);
+        // console.log("humidity", response.main.humidity);
+
     });
-    
 
 });
 
@@ -48,48 +61,60 @@ function renderbutton() {
     }
 
 
-$("#add-movie").on("click", function (event) {
+    $("#add-movie").on("click", function (event) {
 
-    event.preventDefault();
-    var cityName = $("#movie-input").val().trim();
-    if ($('#movie-input').val() === "") {
-        return;
-    } else {
-        cityname.unshift(cityName);
+        event.preventDefault();
+        var cityName = $("#movie-input").val().trim();
+        if ($('#movie-input').val() === "") {
+            return;
+        } else {
+            cityname.unshift(cityName);
 
 
-        cityname.pop();
-        $("#movie-input").val("");
-        renderbutton();
-    }
-});
+            cityname.pop();
+            $("#movie-input").val("");
+            renderbutton();
+        }
+    });
 
-$(".list-p").on("click", function (event) {
+    $(".list-p").on("click", function (event) {
 
-    event.preventDefault();
-     
-    var cityName = $(this).text();
+        event.preventDefault();
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
+        var cityName = $(this).text();
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
+        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+        //     $("#display").empty();
+
+        //    var weatherinfo = $("#display");
+        //     var h = $("<h>").text(response.name + " ( " + newdate + " )" );
+        //     var p1 = $("<div>").text("temp_max" + response.main.temp_max);
+        //     var p2 = $("<div>").text("speed: " + response.wind.speed);
+        //     var p3 = $("<div>").text("humidity:" + response.main.humidity +"%");
+        //     var p4 = $("<div>").text("UV index: " + response.wind.gust);
+
+
+
+        //     var weathericon = "http://openweathermap.org/img/w/"+ response.weather[0].icon +".png";
+             
+             
+
+        //     weatherinfo.append(h ,"<img src="+weathericon+">");
+        //     weatherinfo.append(p1);
+        //     weatherinfo.append(p2);
+        //     weatherinfo.append(p3);
+        //     weatherinfo.append(p4);
+
+        var forecastweather = 
          
-        console.clear();
 
-        console.log(response);
-        console.log(response.name  + newdate);
-         
-        console.log("UV index:", response.wind.gust);
-        console.log("temp_max", response.main.temp_max);
-        console.log("speed", response.wind.speed);
-        console.log("humidity", response.main.humidity);
-        
+        });
+
 
     });
- 
-
-});
 };
