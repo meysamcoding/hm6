@@ -1,23 +1,28 @@
 
-
 var btn = $("#add-movie");
 var search = $("#movie-input");
 var cityname = ["Los Angeles", "New York", "London", "Paris", "Boston", "Phoenix"];
+  
 
- btn.on("click", function (event) {
+var datetime = new Date();
+var newdate = datetime.toLocaleDateString();
+
  
 
-    event.preventDefault();
+ 
+
+ btn.on("click", function (event) {
+     event.preventDefault();
 
     var cityName = search.val();
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + " &APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.clear();
-        console.log(response.name);
+        console.log(response.name + newdate);
         console.log("UV index:", response.wind.gust);
         console.log("temp_max", response.main.temp_max);
         console.log("speed", response.wind.speed);
@@ -41,7 +46,7 @@ function renderbutton() {
 
         $("#todolist").append(p);
     }
-};
+
 
 $("#add-movie").on("click", function (event) {
 
@@ -59,15 +64,10 @@ $("#add-movie").on("click", function (event) {
     }
 });
 
- 
-
-
-
-
-
 $(".list-p").on("click", function (event) {
+
     event.preventDefault();
-    console.log("ddd");
+     
     var cityName = $(this).text();
 
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
@@ -76,10 +76,12 @@ $(".list-p").on("click", function (event) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-
-
+         
         console.clear();
+
         console.log(response);
+        console.log(response.name  + newdate);
+         
         console.log("UV index:", response.wind.gust);
         console.log("temp_max", response.main.temp_max);
         console.log("speed", response.wind.speed);
@@ -87,7 +89,7 @@ $(".list-p").on("click", function (event) {
         
 
     });
-     
-    
+ 
 
 });
+};
