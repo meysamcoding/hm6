@@ -23,6 +23,7 @@ img{
 }
 
 #display{
+    border-radius: 15px;
     margin-bottom: 5px;
     border: solid 1px black;
     margin-left: 0px;
@@ -35,22 +36,26 @@ img{
      
     border: solid 1px black;
 }
+.list-p{
+    border: solid 1px black;
+    margin: 0px;
+    padding: 15px;
+    border-radius: 3px;
+}
 p{
-    border-top: solid 1px black;
-     
+    
     margin-bottom: 0px;
     padding: 5px;
 }
 
 #todolist{
     margin-top: 5px;
-    border-bottom : solid 1px black;
-    border-left : solid 1px black;
-    border-right : solid 1px black;
+     
 }
 div{
-    margin-top: 5px;
-    padding: 5px;
+    margin-top: 3px;
+    padding: 3px;
+   
 }
 img{
     float: center;
@@ -58,4 +63,46 @@ img{
 }
 h{
     font-size: 40px;
+}
+
+#row1{
+    border-radius: 8px;
+    margin-left: 0px;
+    margin-right: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+     background-color: blue;
+    color: white;
+    border: solid 1px black;
+}
+#row2{
+    border-radius: 8px;
+    margin: 15px;
+    margin-right: 25px;
+    background-color: blue;
+    color: white;
+    border: solid 1px black;
+}
+#row3{
+    border-radius: 8px;
+    margin: 15px;
+    margin-right: 25px;
+    background-color: blue;
+    color: white;
+    border: solid 1px black;
+}
+#row4{
+    border-radius: 8px;
+    margin: 15px;
+    margin-right: 25px;
+    background-color: blue;
+    color: white;
+    border: solid 1px black;
+}
+#row5{
+    border-radius: 8px;
+    margin: 15px;
+    background-color: blue;
+    color: white;
+    border: solid 1px black;
 }
