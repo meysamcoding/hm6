@@ -12,7 +12,7 @@ btn.on("click", function (event) {
 
     var cityName = search.val();
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35&units=imperial";
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -20,8 +20,8 @@ btn.on("click", function (event) {
         $("#display").empty();
         var weatherinfo = $("#display");
         var h = $("<h>").text(response.name + " ( " + newdate + " )");
-        var p1 = $("<div>").text("temp_max" + response.main.temp_max);
-        var p2 = $("<div>").text("speed: " + response.wind.speed);
+        var p1 = $("<div>").text("temp_max" + response.main.temp_max + " °F");
+        var p2 = $("<div>").text("speed: " + response.wind.speed + " MPH");
         var p3 = $("<div>").text("humidity: ", +response.main.humidity + "%");
         var p4 = $("<div>").text("UV index: ", +response.wind.gust);
         var weathericon = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
@@ -38,8 +38,8 @@ btn.on("click", function (event) {
 
             var weatherinfo = $("#display");
             var h = $("<h>").text(response.name + " ( " + newdate + " )");
-            var p1 = $("<div>").text("temp_max: " + response.main.temp_max);
-            var p2 = $("<div>").text("speed: " + response.wind.speed);
+            var p1 = $("<div>").text("temp_max: " + response.main.temp_max + " °F");
+            var p2 = $("<div>").text("speed: " + response.wind.speed + " MPH");
             var p3 = $("<div>").text("humidity: " + response.main.humidity + "%");
             var p4 = $("<div>").text("UV index: " + response.wind.gust);
 
@@ -81,7 +81,7 @@ btn.on("click", function (event) {
             var p1 = $("<div>").text(city.list[0].dt_txt);
             var weathericone = "https://openweathermap.org/img/w/" + city.list[0].weather[0].icon + ".png";
 
-            var p3 = $("<div>").text(city.list[0].main.temp + "F");
+            var p3 = $("<div>").text(city.list[0].main.temp + " °F");
             var p4 = $("<div>").text(city.list[0].main.humidity + "%");
             city1.append(p1);
             city1.append("<img src=" + weathericone + ">");
@@ -96,7 +96,7 @@ btn.on("click", function (event) {
             var s1 = $("<div>").text(city.list[8].dt_txt);
             var weathericone = "https://openweathermap.org/img/w/" + city.list[8].weather[0].icon + ".png";
 
-            var s2 = $("<div>").text(city.list[8].main.temp + "F");
+            var s2 = $("<div>").text(city.list[8].main.temp + " °F");
             var s3 = $("<div>").text(city.list[8].main.humidity + "%");
             city2.append(s1);
 
@@ -112,7 +112,7 @@ btn.on("click", function (event) {
 
             var weathericone = "https://openweathermap.org/img/w/" + city.list[16].weather[0].icon + ".png";
 
-            var d2 = $("<div>").text(city.list[16].main.temp + "F");
+            var d2 = $("<div>").text(city.list[16].main.temp + " °F");
             var d3 = $("<div>").text(city.list[16].main.humidity + "%");
             city3.append(d1);
             city3.append("<img src=" + weathericone + ">");
@@ -130,7 +130,7 @@ btn.on("click", function (event) {
 
             var weathericone = "https://openweathermap.org/img/w/" + city.list[24].weather[0].icon + ".png";
 
-            var a2 = $("<div>").text(city.list[24].main.temp + "F");
+            var a2 = $("<div>").text(city.list[24].main.temp + " °F");
             var a3 = $("<div>").text(city.list[24].main.humidity + "%");
             city4.append(a1);
             city4.append("<img src=" + weathericone + ">");
@@ -144,7 +144,7 @@ btn.on("click", function (event) {
 
             var weathericone = "https://openweathermap.org/img/w/" + city.list[24].weather[0].icon + ".png";
 
-            var b2 = $("<div>").text(city.list[32].main.temp + "F");
+            var b2 = $("<div>").text(city.list[32].main.temp + " °F");
             var b3 = $("<div>").text(city.list[32].main.humidity + "%");
             city5.append(b1);
             city5.append("<img src=" + weathericone + ">");
@@ -211,7 +211,7 @@ function renderbutton() {
 
             var weatherinfo = $("#display");
             var h = $("<h>").text(response.name + " ( " + newdate + " )");
-            var p1 = $("<div>").text("temp_max" + response.main.temp_max);
+            var p1 = $("<div>").text("temp_max" + response.main.temp_max + " °F");
             var p2 = $("<div>").text("speed: " + response.wind.speed);
             var p3 = $("<div>").text("humidity:" + response.main.humidity + "%");
             var p4 = $("<div>").text("UV index: " + response.wind.gust);
@@ -254,7 +254,7 @@ function renderbutton() {
             var p1 = $("<div>").text(city.list[0].dt_txt);
             var weathericone = "https://openweathermap.org/img/w/" + city.list[0].weather[0].icon + ".png";
 
-            var p3 = $("<div>").text(city.list[0].main.temp + "F");
+            var p3 = $("<div>").text(city.list[0].main.temp + " °F");
             var p4 = $("<div>").text(city.list[0].main.humidity + "%");
             city1.append(p1);
             city1.append("<img src=" + weathericone + ">");
@@ -269,7 +269,7 @@ function renderbutton() {
             var s1 = $("<div>").text(city.list[8].dt_txt);
             var weathericone = "https://openweathermap.org/img/w/" + city.list[8].weather[0].icon + ".png";
 
-            var s2 = $("<div>").text(city.list[8].main.temp + "F");
+            var s2 = $("<div>").text(city.list[8].main.temp + " °F");
             var s3 = $("<div>").text(city.list[8].main.humidity + "%");
             city2.append(s1);
 
@@ -285,7 +285,7 @@ function renderbutton() {
 
             var weathericone = "https://openweathermap.org/img/w/" + city.list[16].weather[0].icon + ".png";
 
-            var d2 = $("<div>").text(city.list[16].main.temp + "F");
+            var d2 = $("<div>").text(city.list[16].main.temp + " °F");
             var d3 = $("<div>").text(city.list[16].main.humidity + "%");
             city3.append(d1);
             city3.append("<img src=" + weathericone + ">");
@@ -303,7 +303,7 @@ function renderbutton() {
 
             var weathericone = "https://openweathermap.org/img/w/" + city.list[24].weather[0].icon + ".png";
 
-            var a2 = $("<div>").text(city.list[24].main.temp + "F");
+            var a2 = $("<div>").text(city.list[24].main.temp + " °F");
             var a3 = $("<div>").text(city.list[24].main.humidity + "%");
             city4.append(a1);
             city4.append("<img src=" + weathericone + ">");
@@ -317,7 +317,7 @@ function renderbutton() {
 
             var weathericone = "https://openweathermap.org/img/w/" + city.list[24].weather[0].icon + ".png";
 
-            var b2 = $("<div>").text(city.list[32].main.temp + "F");
+            var b2 = $("<div>").text(city.list[32].main.temp + " °F");
             var b3 = $("<div>").text(city.list[32].main.humidity + "%");
             city5.append(b1);
             city5.append("<img src=" + weathericone + ">");
