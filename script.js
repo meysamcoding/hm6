@@ -66,7 +66,7 @@ btn.on("click", function (event) {
 
         });
 
-        var cityid = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
+        var cityid = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35&units=imperial";
 
 
         $.ajax({
@@ -199,7 +199,7 @@ function renderbutton() {
 
         var cityName = $(this).text();
 
-        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35&units=imperial";
 
         $.ajax({
             url: queryURL,
@@ -239,7 +239,7 @@ function renderbutton() {
 
         });
 
-        var cityid = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35";
+        var cityid = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35&units=imperial";
 
 
         $.ajax({
