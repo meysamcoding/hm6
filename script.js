@@ -9,8 +9,9 @@ var newdate = datetime.toLocaleDateString();
 
 btn.on("click", function (event) {
     event.preventDefault();
-
+    
     var cityName = search.val();
+    
 
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35&units=imperial";
     $.ajax({
@@ -54,18 +55,10 @@ btn.on("click", function (event) {
             weatherinfo.append(p2);
             weatherinfo.append(p3);
             weatherinfo.append(p4);
-
             var cityid = response.sys.id;
 
-
-
-
-
-
-
-
         });
-
+           
         var cityid = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&APPID=0c23eeb4c2d4069fceccdac2c0ed3d35&units=imperial";
 
 
@@ -172,7 +165,6 @@ function renderbutton() {
 
         p.attr("data-name", cityname[i]);
         p.text(cityname[i]);
-
         $("#todolist").append(p);
     }
 
@@ -185,8 +177,6 @@ function renderbutton() {
             return;
         } else {
             cityname.unshift(cityName);
-
-
             cityname.pop();
             $("#movie-input").val("");
             renderbutton();
@@ -217,10 +207,7 @@ function renderbutton() {
             var p4 = $("<div>").text("UV index: " + response.wind.gust);
 
 
-
             var weathericon = "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-
-
 
             weatherinfo.append(h, "<img src=" + weathericon + ">");
             weatherinfo.append(p1);
@@ -229,13 +216,6 @@ function renderbutton() {
             weatherinfo.append(p4);
 
             var cityid = response.sys.id;
-
-
-
-
-
-
-
 
         });
 
@@ -291,11 +271,6 @@ function renderbutton() {
             city3.append("<img src=" + weathericone + ">");
             city3.append(d2);
             city3.append(d3);
-
-
-
-
-
             // day number 4
             $("#row4").empty();
             city4 = $("#row4");
@@ -323,18 +298,6 @@ function renderbutton() {
             city5.append("<img src=" + weathericone + ">");
             city5.append(b2);
             city5.append(b3);
-
-
-
-
-
-
-
         });
-
-
-
-
-
     });
 };

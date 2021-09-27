@@ -1,13 +1,22 @@
+body{
+    margin: 0px;
+    padding: 0px;
+   
+     background-image: url("./weather.jpg");
+ 
+    
+}
+ 
 #mainnav{
-    background-color: gray;
+    background-color: #87d9eb;
     text-align: center;
     padding: 5px;
-    margin: 5px;
 }
 #firstcol{
     background-color: rgb(228, 228, 228);    
     padding: 5px;
     margin-left: 5px;
+    box-shadow: 5px 10px 20px rgb(0, 129, 204);
 }
 label {
     display: block;
@@ -24,9 +33,9 @@ img{
 
 #display{
     border-radius: 15px;
-    margin-bottom: 5px;
+     
     border: solid 1px black;
-    margin-left: 0px;
+     
     padding-right: 5px;
     
 }
@@ -64,45 +73,56 @@ img{
 h{
     font-size: 40px;
 }
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+ 
 
 #row1{
-    border-radius: 8px;
-    margin-left: 0px;
-    margin-right: 25px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-     background-color: blue;
+    border-radius: 8px; 
+    margin-right: 25px; 
+     background-color:rgb(121, 205, 253);
     color: white;
     border: solid 1px black;
+    box-shadow: 5px 10px 20px rgb(0, 129, 204);
 }
 #row2{
     border-radius: 8px;
-    margin: 15px;
+     
     margin-right: 25px;
-    background-color: blue;
+    background-color:rgb(121, 205, 253);
     color: white;
     border: solid 1px black;
+    box-shadow: 5px 10px 20px rgb(0, 129, 204);
 }
 #row3{
     border-radius: 8px;
-    margin: 15px;
-    margin-right: 25px;
-    background-color: blue;
+     margin-right: 25px;
+    background-color: rgb(121, 205, 253);
     color: white;
     border: solid 1px black;
+    box-shadow: 5px 10px 20px rgb(0, 129, 204);
 }
 #row4{
     border-radius: 8px;
-    margin: 15px;
-    margin-right: 25px;
-    background-color: blue;
+     margin-right: 25px;
+    background-color: rgb(121, 205, 253);
     color: white;
     border: solid 1px black;
+    box-shadow: 5px 10px 20px rgb(0, 129, 204);
 }
 #row5{
     border-radius: 8px;
-    margin: 15px;
-    background-color: blue;
+    margin-right: 25px; 
+     background-color: rgb(121, 205, 253);
     color: white;
     border: solid 1px black;
+    box-shadow: 5px 10px 20px rgb(0, 129, 204);
 }
+
+@media only screen and (max-width: 600px) {
+    .row.col-lg-9.col-sm-12.col-md-12{
+        margin: 10px 10px;
+        }
+  }
