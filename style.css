@@ -18,15 +18,28 @@ body{
     margin-left: 5px;
     box-shadow: 5px 10px 20px rgb(0, 129, 204);
 }
-label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
+#firstcol label {    
+     font-size: 20px;
+     font-family: bold;
+    
 }
-
-input,
-label {
-    margin: .4rem 0;
+#movie-input{
+    border-radius: 20px;
+    border: none;
+    box-shadow:2px 3px 7px #69aebf;
+    width: 100%;
+    margin-bottom: 10px;
 }
+#add-movie{
+    border-radius: 20px;
+    border: none;
+    font-family: bold;
+    color: white;
+    box-shadow:2px 3px 7px #69aebf;
+    width: 100%;
+    background-color: tomato;
+}
+ 
 img{
     width: 10px;
 }
@@ -73,7 +86,11 @@ img{
 h{
     font-size: 40px;
 }
-.row {
+.row.col-lg-9.col-sm-12.col-md-12{
+   display: none;
+
+}
+#main {
     margin-left: 0px;
     margin-right: 0px;
 }

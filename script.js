@@ -9,6 +9,7 @@ var newdate = datetime.toLocaleDateString();
 
 btn.on("click", function (event) {
     event.preventDefault();
+    $(".row.col-lg-9.col-sm-12.col-md-12").css("display", "flex")
     
     var cityName = search.val();
     
@@ -143,21 +144,13 @@ btn.on("click", function (event) {
             city5.append("<img src=" + weathericone + ">");
             city5.append(b2);
             city5.append(b3);
-
-
-
-
     });
-
-
-
-
-
 });
 
 renderbutton();
 
 function renderbutton() {
+
     $("#todolist").empty();
     for (var i = 0; i < cityname.length; i++) {
         var p = $("<p>");
@@ -184,7 +177,7 @@ function renderbutton() {
     });
 
     $(".list-p").on("click", function (event) {
-
+        $(".row.col-lg-9.col-sm-12.col-md-12").css("display", "flex")
         event.preventDefault();
 
         var cityName = $(this).text();
